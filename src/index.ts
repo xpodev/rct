@@ -1,13 +1,7 @@
 #!/usr/bin/env node
 import path from "path";
-import { handle } from "./handler";
-
-const DEV = false;
-
-function closeRCT(message: string) {
-    console.log(message);
-    process.exit(1);
-}
+import { handle } from "./lib/handler";
+import { closeRct, error, setTypescript } from "./lib/utils";
 
 const argv: any = {};
 const itrArgs = process.argv.slice(2);
@@ -31,13 +25,11 @@ for (let i = 0; i < itrArgs.length; i++) {
 
 try {
     const packageJSON = require(path.join(process.cwd(), "package.json"));
-    if (!DEV) {
-        if (!packageJSON.dependencies || !packageJSON.dependencies.react) {
-            closeRCT("Cannot run rct on a non-react project folder");
-        }
+    if (!packageJSON.dependencies || !packageJSON.dependencies.react) {
+        closeRct(error("Cannot run rct in a non-react project folder"));
     }
-    __typescript = packageJSON.dependencies.typescript ? true : false;
+    setTypescript(!!packageJSON.dependencies.typescript);
     handle(argv);
 } catch (e) {
-    closeRCT("Cannot run rct on a non-react project folder");
+    closeRct(error("Cannot run rct in a non-react project folder"));
 }

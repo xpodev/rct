@@ -1,5 +1,5 @@
-import { generate } from "./generate/generate";
-import * as colors from "./colors";
+import { generate } from "../generate/generate";
+import * as colors from "./console-font";
 
 export async function handle(argv: any) {
     try {

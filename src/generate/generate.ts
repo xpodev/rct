@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { toCamelCase, toPascalCase } from "../utils";
+import { isTypescript, success, toCamelCase, toPascalCase } from "../lib/utils";
 
-import * as colors from "../colors";
+import * as colors from "../lib/console-font";
 
 const templatesFolder = path.join(__dirname, "templates");
 
@@ -80,7 +80,7 @@ async function generateService(servicePath: string, args: object) {
     if (pathRegex.test(servicePath)) {
         // Path data
         const fileData = makeFileData(servicePath);
-        fileData.ext = __typescript ? "ts" : "js";
+        fileData.ext = isTypescript() ? "ts" : "js";
         // Script
         fs.writeFileSync(`${fileData.fullpath}.${fileData.ext}`,
             renderTemplate(templates.service.script(),
@@ -108,13 +108,13 @@ function makeFileData(filePath: string) {
         basename,
         dirname,
         fullpath,
-        ext: __typescript ? "tsx" : "jsx"
+        ext: isTypescript() ? "tsx" : "jsx"
     };
 }
 
 function renderTemplate(template: string, obj: any) {
     template = template.replaceAll(typescriptRegex, (substring, code) => {
-        return __typescript ? code : "";
+        return isTypescript() ? code : "";
     });
     for (const k in obj) {
         template = template.replaceAll(`{{${k}}}`, obj[k]);
@@ -123,5 +123,5 @@ function renderTemplate(template: string, obj: any) {
 }
 
 function logCreated(filename: string) {
-    console.log(`[${colors.FgGreen}CREATED${colors.Reset}] ${colors.FgYellow}${filename}${colors.Reset}`);
+    console.log(`[${success("CREATED")}] ${colors.FgYellow}${filename}${colors.Reset}`);
 }

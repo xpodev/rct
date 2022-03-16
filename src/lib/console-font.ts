@@ -1,10 +1,14 @@
 export const Reset = "\x1b[0m"
+
+// Font styles
 export const Bright = "\x1b[1m"
 export const Dim = "\x1b[2m"
 export const Underscore = "\x1b[4m"
 export const Blink = "\x1b[5m"
 export const Reverse = "\x1b[7m"
 export const Hidden = "\x1b[8m"
+
+// Foreground
 export const FgBlack = "\x1b[30m"
 export const FgRed = "\x1b[31m"
 export const FgGreen = "\x1b[32m"
@@ -13,6 +17,8 @@ export const FgBlue = "\x1b[34m"
 export const FgMagenta = "\x1b[35m"
 export const FgCyan = "\x1b[36m"
 export const FgWhite = "\x1b[37m"
+
+// Background
 export const BgBlack = "\x1b[40m"
 export const BgRed = "\x1b[41m"
 export const BgGreen = "\x1b[42m"
