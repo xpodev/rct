@@ -27,15 +27,3 @@ jobs:
         npm install --silent
         npm install -D typescript --silent
         scripts/build.sh
-    
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 16
-        registry-url: https://registry.npmjs.org/
-        
-    - name: Publish
-      working-directory: bin
-      run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
