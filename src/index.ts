@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import path from "path";
 import { handle } from "./lib/handler";
 import { closeRct, error, setTypescript } from "./lib/utils";
