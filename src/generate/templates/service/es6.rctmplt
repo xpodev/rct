@@ -1,0 +1,6 @@
+class {{name}}Service {
+    constructor() {}
+}
+
+const {{camelCaseName}}Service = new {{name}}Service();
+export default {{camelCaseName}}Service;

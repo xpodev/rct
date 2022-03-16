@@ -1,0 +1,7 @@
+{@@typescript:import {{{name}}Props} from "./{{name}}";
+
+@}export function render(props{@@typescript:: {{name}}Props@}) {
+    return (
+        <p>{{name}} is working!</p>
+    );
+}

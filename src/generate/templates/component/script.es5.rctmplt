@@ -1,0 +1,12 @@
+import "./{{name}}.css";
+import { render } from "./{{name}}.template";
+{@@typescript:
+export interface {{name}}Props {
+    
+}
+@}
+function {{name}} (props{@@typescript:: {{name}}Props@}) {
+    return render(props);
+}
+
+export default {{name}};

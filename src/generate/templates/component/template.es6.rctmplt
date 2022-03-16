@@ -1,0 +1,7 @@
+{@@typescript:import {{name}} from "./{{name}}";
+
+@}export function render({@@typescript:this: {{name}}@}) {
+    return (
+        <p>{{name}} is working!</p>
+    );
+}
