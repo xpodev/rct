@@ -6,7 +6,6 @@
   "scripts": {
     "test": "",
     "watch": "tsc-watch --onSuccess \"npm run test\"",
-    "install": "tsc && npm i -g .",
     "build": "tsc"
   },
   "repository": {
