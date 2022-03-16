@@ -26,4 +26,4 @@ jobs:
       run: |
         npm install --silent
         npm install -D typescript --silent
-        npx tsc
+        scripts/build.sh
