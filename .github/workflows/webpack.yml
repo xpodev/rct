@@ -26,4 +26,4 @@ jobs:
       run: |
         npm install --silent
         npm install webpack-cli
-        npx webpack
+        npx webpack --config webpack.config.js
