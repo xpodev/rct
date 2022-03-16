@@ -9,6 +9,11 @@
     "install": "tsc && npm i -g .",
     "build": "tsc"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xpodev/rct"
+  },
+  "homepage": "https://github.com/xpodev/rct",
   "bin": {
     "rct": "./bin/index.js"
   },
