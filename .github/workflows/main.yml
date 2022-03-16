@@ -1,4 +1,4 @@
-name: NodeJS with Typescript
+name: Main Workflow
 
 on:
   push:
