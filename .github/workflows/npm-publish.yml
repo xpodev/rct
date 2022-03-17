@@ -28,6 +28,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - uses: actions/checkout@v1
       - uses: ./.github/workflows/main
 
       - run: npm publish
