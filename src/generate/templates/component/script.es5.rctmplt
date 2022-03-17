@@ -1,5 +1,5 @@
 import "./{{name}}.css";
-import { render } from "./{{name}}.template";
+import { render } from "./{{name}}.render";
 {@@typescript:
 export interface {{name}}Props {
     

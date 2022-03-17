@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import "./{{name}}.css";
-import { render } from "./{{name}}.template";
+import { render } from "./{{name}}.render";
 {@@typescript:
 interface {{name}}Props {
     

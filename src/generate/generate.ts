@@ -113,11 +113,11 @@ function makeFileData(filePath: string) {
 }
 
 function renderTemplate(template: string, obj: any) {
-    template = template.replaceAll(typescriptRegex, (substring, code) => {
+    template = template.replace(typescriptRegex, (substring, code) => {
         return isTypescript() ? code : "";
     });
     for (const k in obj) {
-        template = template.replaceAll(`{{${k}}}`, obj[k]);
+        template = template.replace(new RegExp(`{{${k}}}`, "gm"), obj[k]);
     }
     return template;
 }
