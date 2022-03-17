@@ -30,8 +30,7 @@ jobs:
       - run: npm ci
       
       - name: Main
-      - uses: actions/checkout@v2
-      - uses: ./.github/workflows/main.yml
+        uses: ./.github/workflows/main
       
       - name: Publish
         working-directory: bin
