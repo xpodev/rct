@@ -27,8 +27,8 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: sh scripts/build.sh
+      - uses: ./.github/workflows/main
+
       - run: npm publish
         working-directory: bin
         env:
